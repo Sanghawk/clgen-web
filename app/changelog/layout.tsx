@@ -12,10 +12,8 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-        <div className="min-h-[calc(100vh-96px)]">
-          <div className="prose prose-headings:mt-8 prose-headings:font-semibold prose-headings:text-black prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg dark:prose-headings:text-white">
-            {children}
-          </div>
+        <div className="min-h-[calc(100vh-96px)] mt-8">
+          <div className="prose dark:prose-invert">{children}</div>
         </div>
 
         <div className="order-last hidden w-56 shrink-0 lg:block">
