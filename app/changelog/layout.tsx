@@ -23,7 +23,7 @@ export default async function MdxLayout({
           <div></div>
         </div>
         <div className="min-h-[calc(100vh-96px)] mt-8">
-          <div className="prose dark:prose-invert">{children}</div>
+          <div className="prose dark:prose-invert pb-24">{children}</div>
         </div>
 
         <div className="order-last hidden w-56 shrink-0 lg:block">
