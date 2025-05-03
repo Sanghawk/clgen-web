@@ -1,0 +1,36 @@
+# Changelog for v15.4.0-canary.17
+Release Date: Thu May 1, 2025
+
+## Summary
+- Significant changes to the handling of request body data after middleware execution.
+- Major enhancements to Turbopack for improved performance.
+- Adjusted stylistic ESLint TypeScript defaults and build procedure.
+- Refactored the configuration of minifier options to be handled exclusively on the JS side.
+- Continuous Integration (CI) line-wrap features improved in `build_and_test.yml` file.
+- Upgraded React and loader utils to latest releases.
+- Ensured errors during prerender can be sourcemapped effectively.
+- Introduced "auto" as a valid `<Link>` component's prefetch prop.
+- Migrated the svgo webpack test.
+
+## Release Notes
+
+### May 1, 2025
+- Reverted previous changes to lint test to reintroduce eslint config snapshot testing. (#77824 - commit #32acf)
+- Fixed issues with the original request body data after middleware execution. (#77662 - commit #bda5d)
+
+### April 30, 2025
+- Corrected Turbopack handling to require only meta data for marking tasks as dirty. (#78699 - commit #3e6ab)
+- Improved handling of afterBuild job blocks in `build_and_test.yml` file. (#78718 - commit #e87bb)
+- Configured sharding the entries into multiple SST files by key space whenever many entries are written for a key family in a write batch. (#78652 - commit #3d187)
+- Upgraded to the latest release of React. (#78715 - commit #443b2)
+- Fixed minifier options for webpack builds to align configuration procedures. (#78717 - commit #52233)
+- Resolved an issue with `pnpm install` and `pnpm build` inter-dependency in `build_reusable.yml`. (#78720 - commit #1abba)
+- Updated ESLint TypeScript stylistic defaults to exert less aggressive build failure behavior. (#78679 - commit #703f4)
+- Fully migrated the configuration of minifier options for SWC from Rust to JavaScript side code. (#78719 - commit #1f3a0)
+- Improved sourcemap accuracy while pre-rendering in the `build-sourcemaps` function. (#78709 - commit #7d270)
+- Upgraded the existing version of `rustc-hash` to 2.1.1 in `turbopack`. (#78721 - commit #0f4ee)
+- Adjusted Turbopack to compact earlier and limit the number of accessed files. (#78649 - commit #5ac57)
+- Made provision for better error disclosures during Turbopack processing. (#78637 - commit #bfdd1)
+- Enhanced asset link prefetching with the addition of "auto" as a valid prefetch prop. (#78689 - commit #6a588)
+- Upgraded loader-utils to the latest version. (#78707 - commit #53853)
+- Migrated SVGO webpack test process. (#78704 - commit #de762)
