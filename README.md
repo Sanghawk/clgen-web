@@ -86,3 +86,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## How both parts work together
 
 By leveraging next.js mdx feature to dynamically import the generated changelog mdx files, we are able streamline the process of bringing the changelog to the end user.
+
+## AI tools used:
+
+Cursor
+ChatGPT
