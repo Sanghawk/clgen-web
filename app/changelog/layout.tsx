@@ -1,5 +1,17 @@
-export default function MdxLayout({ children }: { children: React.ReactNode }) {
+import fs from "fs";
+import path from "path";
+import SideNav from "@/app/ui/SideNav";
+export default async function MdxLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   // Create any shared layout or styles here
+  const changelogDir = path.join(process.cwd(), "changelogs");
+  const files = fs
+    .readdirSync(changelogDir)
+    .filter((f) => /\.mdx?$/.test(f))
+    .map((f) => f.replace(/\.(md|mdx)$/, ""));
   return (
     <main>
       <div className="md:hidden">Not yet implemented - mobile sidenav</div>
@@ -7,9 +19,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         <div className="sticky top-[96px] hidden h-[calc(100vh-96px)] w-[284px] md:flex md:shrink-0 md:flex-col md:justify-between">
           <div>Not yet implemented - search changelog</div>
           <div className="overflow-hidden relative">
-            <div className="flex h-[calc(100vh-260px)] flex-col overflow-y-scroll pb-4 pr-2 dark:text-white">
-              Not yet implemented - sidenav
-            </div>
+            <SideNav slugs={files} />
           </div>
         </div>
         <div className="min-h-[calc(100vh-96px)] mt-8">
