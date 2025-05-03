@@ -1,15 +1,27 @@
+// next.config.mjs
 import createMDX from '@next/mdx'
- 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure `pageExtensions` to include markdown and MDX files
+  // 1) keep your MDX/pageExtensions settings
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  // Optionally, add any other Next.js config below
+
+  // 2) add your redirect from “/” → “/changelogs"
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/changelog',
+        permanent: true,  // 308 permanent redirect
+      },
+    ]
+  },
+
+  // …any other Next.js config you need
 }
- 
+
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
+  // your MDX plugins, etc.
 })
- 
-// Merge MDX config with Next.js config
+
 export default withMDX(nextConfig)
