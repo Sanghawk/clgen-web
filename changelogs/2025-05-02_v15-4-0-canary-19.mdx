@@ -1,0 +1,24 @@
+# v15.4.0-canary.19
+
+## Summary
+- Introduced a new build lifecycle hook (afterProductionCompile) to run specific actions post-production compile.
+- Fixed and stabilized a few test cases and dependencies.
+- Improved code quality and efficiency by refactoring some sections and introducing concurrency in certain areas.
+- Documentation has been enhanced particularly within the landing page.
+- Several issues have been addressed to ensure better user experience.
+
+## Release Notes
+
+### May 2, 2025
+- Introduced "afterProductionCompile" hook that executes after production build compilation finishes but before running post-compilation tasks (**feat: build lifecycle hooks - afterProductionCompile**) `(#77345)`
+- Made sure that the patched fetch cache set promise is properly awaited **(fix: make sure that the patched fetch cache set promise is properly awaited)** `(#75971)`
+- Improved landing page and added introduction to Getting Started page **(docs: Improve landing page, add intro to Getting Started page)** `(#78765)`
+- Improved reference for Wasm on Edge **(Turbopack: correctly reference injected variable for Wasm on Edge)** `(#78771)`
+- Ensured code frames in production when sourcemaps are enabled **([build-sourcemaps] Include codeframes in prod when sourcemaps are enabled)** `(#78710)`
+- Introduced concurrency limit to effects **(Turbopack: add concurrency limit to effects)** `(#78725)`
+- Assign a high aggregation number to session dependent tasks **(Turbopack: assign a high aggregation number to session dependent tasks)** `(#78668)`
+- Avoided running the `build_and_deploy` workflow twice when pushed to the main Next.js repo and also opened as a PR **(De-dupe build_and_deploy run for PRs)** `(#78792)`
+- Stabilized the back-forward-cache test assertions **(Stabilize back-forward-cache test cases)** `(#78735)`
+- Refactored codegen in preparation for scope hoisting **(Turbopack: refactor codegen)** `(#78685)`
+- Used separate meta and data modified flags **(Turbopack: Use separate meta and data modified flags)** `(#78724)`
+- Outlined the latest release **(v15.4.0-canary.19)** `(#f62a1)`
