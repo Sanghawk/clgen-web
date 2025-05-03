@@ -1,0 +1,26 @@
+# Release Notes for v15.4.0-canary.16 - April 30, 2025
+
+## Summary
+In this update, several modifications have been made to improve our services. We've upgraded built-in babel packages and made several changes to Turbopack and handling of test manifests. We've refactored the codegen of module fragments and excluded the config package from bundling. Also, we've fixed an issue with the timing data for deploy tests and taken care of a mishap in the deployment process.
+
+## Release Notes
+
+### April 30, 2025
+
+* Official recruitment of v15.4.0-canary.16 update (`d725f3d`)
+* Upgraded built-in babel packages for better performance (`54a637c`)
+* Revised Turbopack production test manifest to reflect recent changes (`5350373`)
+* Changed Turbopack development test manifest as part of the ongoing adaptation (`c8a1e76`)
+* Turbopack: Refactored the codegen of module fragments for clarity and maintainability (`43a4c62`)
+* Excluded the config package from bundling to address compatibility issues (`6c09eab`)
+* Deployment test from #77898 was fixed due to a previously overlooked issue (`9fe8a0c`)
+
+### April 29, 2025
+
+* Fixed an intermittently occurring issue with the timing data for deploy tests (`c342968`)
+
+### April 30, 2025
+
+* Addressed missing local changes for a deployment test (again, from #77898) which was causing the test to fail (`c784c6f`)
+
+All these changes reflect our ongoing efforts to continually improve our services and ensure we deliver a seamless experience for all our users. Thank you for your trust, and we look forward to your feedback.

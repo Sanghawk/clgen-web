@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function SideNav({ slugs }: { slugs: string[] }) {
+  const ordered = slugs.sort((a, b) => b.localeCompare(a));
+
   const pathname = usePathname(); // Get current route
 
   return (
@@ -18,7 +20,7 @@ export default function SideNav({ slugs }: { slugs: string[] }) {
           </Link>
         </li>
         <ul className="px-0.5 last-of-type:mb-0 mb-8">
-          {slugs.map((slug) => (
+          {ordered.map((slug) => (
             <li className="my-1.5" key={slug}>
               <Link
                 className={`relative flex w-full cursor-pointer items-center justify-between rounded-md py-1 pl-2 text-left text-sm
